@@ -1,11 +1,12 @@
-import { Component, signal} from '@angular/core';
+import { Component,  signal} from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-header',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
-   title='My first angular app';
+   title=signal('My first angular app');
 }

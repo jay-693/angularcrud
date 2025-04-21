@@ -1,0 +1,5 @@
+<!-- Two way binding (property binding+event binding) -->
+<div class="ekart--search--product">
+    <input class="ekart-search" [value]="searchText" (keyup)="updatesearch($event)">
+</div>
+<p>searching result for {{searchText}}</p>

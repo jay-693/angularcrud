@@ -1,14 +1,14 @@
-import { Component } from '@angular/core';
-import { HomeComponent } from './home/home.component';
+import { Component, signal } from '@angular/core';
 import { HeaderComponent } from './component/header/header.component';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [HomeComponent,HeaderComponent],
+  imports: [RouterOutlet,HeaderComponent],
   template: `
   <app-header />
   <main>
-     <app-home />
+     <router-outlet />
 </main>
   `,
   styles: [`
@@ -18,5 +18,5 @@ import { HeaderComponent } from './component/header/header.component';
     `],
 })
 export class AppComponent {
-  title = 'first-ng-app';
+  title = signal('first-ng-app');
 }

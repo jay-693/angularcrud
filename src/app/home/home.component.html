@@ -1,1 +1,22 @@
-<p>home works!</p>
+<app-greeting [message]="homeMessage()"/>
+<app-counter />
+<!-- event binding -->
+<input placeholder="Type something..." type="text" (keyup)="keyUpHandler($event)"/>
+<p>searching for {{name}}</p>
+<p>Name={{product.productname}}</p>
+<p>Price={{product.price}}</p>
+<!-- string or text interpolation -->
+<p>discounted price={{product.price-(product.price*product.discount%100)}}</p>
+<p>{{product.instock > 0 ? 'only ' + product.instock + ' items left' :'not in stock'}}</p>
+<!-- property binding -->
+<button [disabled]="!(product.instock>0)">Buy Now</button>
+<div class="ekart-search">
+    <app-search></app-search>
+</div>
+<!-- css binding -->
+<ul [style]="listStyles"> Introduction to angular </ul>
+<section [style]="sectionStyles"> components are building blocks of angular </section>
+<button routerLink="/employee">Get Employees</button>
+<button routerLink="/templet-form">GetStudent</button>
+
+
