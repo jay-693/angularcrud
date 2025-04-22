@@ -5,11 +5,13 @@ import { SearchComponent } from '../components/search/search.component';
 import { TempletFormComponent } from '../components/templet-form/templet-form.component';
 import { EmployeeDataComponent } from '../components/employee-data/employee-data.component';
 import { RouterLink } from '@angular/router';
+import { ReactiveFormComponent } from '../components/reactive-form/reactive-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
   standalone:true,
-  imports: [GreetingComponent, CounterComponent, SearchComponent,TempletFormComponent, RouterLink],
+  imports: [GreetingComponent, CounterComponent, SearchComponent,ReactiveFormsModule, RouterLink],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })

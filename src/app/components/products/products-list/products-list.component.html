@@ -1,0 +1,39 @@
+<!-- components/products/product-list/product-list.component.html -->
+<div class="product-list">
+    <h2>Product List</h2>
+    
+    <div *ngIf="isLoading">Loading products...</div>
+    <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+    
+    <button routerLink="/products/add" class="btn-add">Add New Product</button>
+    
+    <table *ngIf="!isLoading && products.length > 0">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Price</th>
+          <th>Category</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of products">
+          <td>{{ product.id }}</td>
+          <td>{{ product.name }}</td>
+          <td>{{ product.description }}</td>
+          <td>{{ product.price  }}</td>
+          <td>{{ product.category }}</td>
+          <td>
+            <button (click)="editProduct(product.id)" class="btn-edit">Edit</button>
+            <button (click)="deleteProduct(product.id)" class="btn-delete">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    
+    <div *ngIf="!isLoading && products.length === 0">
+      No products found. Add a new product to get started.
+    </div>
+  </div>
